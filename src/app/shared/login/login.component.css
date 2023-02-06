@@ -1,0 +1,17 @@
+p {
+    font-family: Lato;
+  }
+  .container-fluid{
+    width: 100%;
+    justify-content: space-around;
+  }
+  .btn-secondary{
+    padding-bottom: 0px;
+  }
+  .nav-item.nav-link{
+    color: white;
+  }
+  .form-control{
+    font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+    font-weight: 400;
+  }
