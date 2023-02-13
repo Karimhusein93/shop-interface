@@ -1,38 +1,41 @@
 <div class="container">
   <div class="contact">
     <div class="logo">
-      <img class="mail-icon" src="assets/mail.png">
+      <img class="mail-icon" src="assets/mail.png" />
     </div>
     <div class="contact-text">
       <h2>Contact us</h2>
       <p>You can use our phone or our email address</p>
     </div>
   </div>
-  <div class="cards"> 
+  <div class="cards">
     <a class="card" href="tel://0215392524">
       <div class="card-title">
         <h5>Call us</h5>
       </div>
       <div class="card-body">
-        <p>We will answer your phone calls between 9-17, from Monday till Friday.</p>
+        <p>
+          We will answer your phone calls between 9-17, from Monday till Friday.
+        </p>
       </div>
       <div class="card-footer">
         <mat-icon> local_phone</mat-icon>
-        <p>021 539 2524
-        </p>
+        <p>021 539 2524</p>
       </div>
     </a>
     <a class="card" href="mailto:customer@obsentum.com">
-        <div class="card-title">
+      <div class="card-title">
         <h5>Write us an email</h5>
-        </div>
-        <div class="card-body">
-        <p>You can write to us an email whenever you want and we will make sure you get an answer in 1 business day.</p>
+      </div>
+      <div class="card-body">
+        <p>
+          You can write to us an email whenever you want and we will make sure
+          you get an answer in 1 business day.
+        </p>
       </div>
       <div class="card-footer">
         <mat-icon> mail_outline</mat-icon>
-        <p>customer@obsentum.com
-        </p>
+        <p>customer@obsentum.com</p>
       </div>
     </a>
   </div>
@@ -40,8 +43,122 @@
     <hr class="flex-grow-1" />
     <div class="badge bg-secondary">OR</div>
     <hr class="flex-grow-1" />
-</div>
-<div class="form">
-  <p class="form-description">Use the contact form below to send us a message.</p>
-</div>
+  </div>
+  <div class="form">
+    <p class="form-description">
+      Use the contact form below to send us a message.
+    </p>
+    <div class="card">
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="firstName"
+            required
+            [(ngModel)]="firstName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            required
+            [(ngModel)]="lastName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+            [(ngModel)]="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phoneNumber"
+            name="phoneNumber"
+            required
+            [(ngModel)]="phoneNumber"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inquiryType">Inquire Type</label>
+          <select
+            class="form-control"
+            id="inquiryType"
+            name="inquiryType"
+            required
+            [(ngModel)]="inquiryType"
+          >
+            <option class="form-control" value="Order status">
+              Order status
+            </option>
+            <option class="form-control" value="Delivery">Delivery</option>
+            <option class="form-control" value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="answerBy">Answer By</label>
+          <select
+            class="form-control"
+            id="answerBy"
+            name="answerBy"
+            required
+            [(ngModel)]="answerBy"
+          >
+            <option class="form-control" value="phone">Phone</option>
+            <option class="form-control" value="email">Email</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            name="message"
+            required
+            [(ngModel)]="message"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-dark"
+          [disabled]="!form.form.valid"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="company-data">
+    <h5>Company data:</h5>
+    <div class="card">
+      <div class="half-card">
+        <p>SC MILLENIUM PRO DESIGN SRL</p>
+        <p>Str. Sulfinei Nr. 3</p>
+        <p>Otopeni, Ilfov</p>
+        <p>Cod postal: 075100</p>
+      </div>
+
+      <div class="half-card">
+        <p>CUI: RO 12098582</p>
+        <p>Reg. Com: J23/1088/2011</p>
+        <p>Cont bancar: RO96 BRDE 450S V099 6586 4500</p>
+        <p>Capital social: 9200 lei</p>
+      </div>
+    </div>
+  </div>
 </div>
