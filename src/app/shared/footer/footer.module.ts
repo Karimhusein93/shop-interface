@@ -10,6 +10,7 @@ import { ReturnComponent } from '../../footer-content/return/return.component';
 import { FooterRoutingModule } from './footer-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     DeliveryComponent,
     ReturnComponent,
   ],
-  imports: [CommonModule, FooterRoutingModule,MatIconModule,FormsModule],
+  imports: [CommonModule, FooterRoutingModule, MatIconModule, FormsModule, HttpClientModule],
   exports: [
     AboutComponent,
     TermsComponent,
