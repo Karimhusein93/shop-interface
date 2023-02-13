@@ -1,0 +1,52 @@
+.contact{
+    display: flex;
+    flex-direction: row;
+}
+.container{
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+.contact-text{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+}
+.mail-icon{
+    width: 4em;
+}
+.card-title{
+  text-align: center;
+  padding-top: 2%;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+.card{
+    width: 48%;
+    text-decoration: none;
+    color: black;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+}
+.horizontal-divider{
+    display: flex;
+    flex-direction: row;
+}
+.card-footer>p{
+    float: right;
+    color: rgb(166, 164, 164);
+}
+.card-footer{
+    background-color: white;
+}
+.form-description{
+    text-align: center;
+}

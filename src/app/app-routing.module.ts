@@ -5,16 +5,17 @@ import { SummaryPageComponent } from './summary-page/summary-page.component';
 const routes: Routes = [
   {
     path: '',
-    component:SummaryPageComponent
+    component: SummaryPageComponent,
   },
   {
     path: 'page',
-    loadChildren: () => import('./shared/footer/footer.module').then(m => m.FooterModule)
+    loadChildren: () =>
+      import('./shared/footer/footer.module').then((m) => m.FooterModule),
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
