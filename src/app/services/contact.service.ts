@@ -9,7 +9,7 @@ export class ContactService {
 
   answerUrl = environment.url + 'Answer/GetAnswerTypes';
   inquireUrl = environment.url + 'Inquire/GetInquireTypes';
-  
+  contactUrl = environment.url + 'Contact/SendContactForm';
   constructor(private http:HttpClient) { 
 
   }
@@ -18,5 +18,8 @@ export class ContactService {
   }
   getInquireTypes(){
     return this.http.get(this.inquireUrl);
+  }
+  sendContactForm(form:any){
+    return this.http.post(this.contactUrl,form);
   }
 }

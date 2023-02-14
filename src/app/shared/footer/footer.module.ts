@@ -11,6 +11,7 @@ import { FooterRoutingModule } from './footer-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     DeliveryComponent,
     ReturnComponent,
   ],
-  imports: [CommonModule, FooterRoutingModule, MatIconModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FooterRoutingModule, MatIconModule, FormsModule, HttpClientModule,ReactiveFormsModule],
   exports: [
     AboutComponent,
     TermsComponent,
