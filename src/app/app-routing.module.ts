@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./shared/footer/footer.module').then((m) => m.FooterModule),
   },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./summary-page/summary.module').then((m) => m.SummaryModule),
+  },
 ];
 
 @NgModule({

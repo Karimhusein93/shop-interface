@@ -21,8 +21,8 @@
   color: black;
   border-radius: 10%;
 }
-ul li:hover a,
+/* ul li:hover a,
 ul li:active a,
 ul li:focus a {
   background-color: #d7d0b1;
-}
+} */
