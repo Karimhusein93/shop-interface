@@ -21,8 +21,23 @@
   color: black;
   border-radius: 10%;
 }
-/* ul li:hover a,
-ul li:active a,
-ul li:focus a {
-  background-color: #d7d0b1;
-} */
+.dropdown-menu.show{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.dropdown-item.active{
+  color: black;
+
+}
+.dropdown-menu {
+  --bs-dropdown-link-hover-color: black;
+  --bs-dropdown-link-hover-bg: #beb29e;
+  --bs-dropdown-link-active-color: white;
+  --bs-dropdown-link-active-bg: white;
+}
+.dropdown-item.active:hover{
+  background-color: #beb29e;
+}
+.nav-item.dropdown:hover{
+ background-color: #beb29e;
+}
