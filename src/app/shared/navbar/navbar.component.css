@@ -31,13 +31,13 @@
 }
 .dropdown-menu {
   --bs-dropdown-link-hover-color: black;
-  --bs-dropdown-link-hover-bg: #beb29e;
+  --bs-dropdown-link-hover-bg: #c6c2a8;
   --bs-dropdown-link-active-color: white;
   --bs-dropdown-link-active-bg: white;
 }
 .dropdown-item.active:hover{
-  background-color: #beb29e;
+  background-color: #c6c2a8;
 }
 .nav-item.dropdown:hover{
- background-color: #beb29e;
+ background-color: #c6c2a8;
 }

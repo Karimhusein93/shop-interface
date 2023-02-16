@@ -1,0 +1,32 @@
+.container {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+.page-path {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  font: 14px Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+hr {
+  font-size: 3em;
+  padding-bottom: 0.21428571rem;
+  border-bottom: 1px solid rgba(34,36,38,.15);
+}
+a{
+  color:#72673a;
+  text-decoration: none;
+}
+.active.section{
+  font-weight: 700;
+}
+.section{
+  margin-right: 1%;
+  margin-left: 1%;
+}
+a:hover{
+  color: #bbae73;
+}
