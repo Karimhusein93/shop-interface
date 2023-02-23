@@ -10,6 +10,7 @@ import { ProductService } from '../services/product.service';
 export class ProductComponent implements OnInit {
   params: any = '';
   category: any;
+  productList: any =[];
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService
@@ -20,6 +21,7 @@ export class ProductComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getCategory();
+    this.getProductsListBySubcategoryId();
   }
   getCategory(){
     this.params = this.activatedRoute.snapshot.params;
@@ -28,5 +30,10 @@ export class ProductComponent implements OnInit {
       .subscribe((data) => {
         this.category = data;
       });
+  }
+  getProductsListBySubcategoryId(){
+    return this.productService.getProductsList(this.params.category).subscribe((data) => {
+      this.productList = data;
+    });
   }
 }
