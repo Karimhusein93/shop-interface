@@ -1,55 +1,194 @@
 <div class="container">
-    <hr/>
-<div class="page-path">
-<a href="/" class="section">Home</a>
-<div class="divider"> / </div>
-                    <div class="section">Categories</div>
-            <div class="divider"> / </div>
-                    <a class="section">{{category?.categoryName}}</a>
-            <div class="divider"> / </div>
-    <div class="active section">{{category?.subCategoryName}}</div>
-</div>
-<hr/>
-    <div class="product">
-<div class="filter container column" *ngFor="let item of productList">
-    <form name="filters-form">
-    <div class="header item">
-        Filter results
-    </div>
-    <div class="item">
-<div class="form-check form-switch" *ngIf="item.scentId !==null">
-    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-    <label class="form-check-label" for="flexSwitchCheckChecked">{{item.scent.label}}</label>
+  <hr />
+  <div class="page-path">
+    <a href="/" class="section">Home</a>
+    <div class="divider">/</div>
+    <div class="section">Categories</div>
+    <div class="divider">/</div>
+    <a class="section">{{ category?.categoryName }}</a>
+    <div class="divider">/</div>
+    <div class="active section">{{ category?.subCategoryName }}</div>
   </div>
-    </div>
-    </form>
-</div>
-<div class="product list row justify-content-between">
-        <!-- <div class="obssesion-title">
-          <h3>{{item.brand.brandName}}</h3>
+  <hr />
+  <div class="product">
+    <div class="product-filter-categories">
+      <!-- <div
+        class="product-filter-container"
+        *ngIf="productDetailsList?.scents?.length > 1"
+      >
+        <p>Scents</p>
+        <div
+          class="filter container column"
+          *ngFor="let item of productDetailsList?.scents"
+        >
+          <form name="filters-form">
+            <div class="item">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  [id]="'scent-'"
+                  +
+                  item.scentId
+                  [checked]="selectedScents.includes(item.scentId)"
+                  (change)="toggleSelection('scent', item.scentId)"
+                />
+                <label
+                  class="form-check-label"
+                  [for]="'scent-' + item.scentId"
+                  >{{ item.scentName }}</label
+                >
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="obssesion-content">
-        <div class="third-container">
-          <div class="card-head">
-            {{item.productName}}
-          <img class="card-img-top">
-          <div class="button"><a href="#"> View more</a></div>
-          </div>
-      <div class="card-body">
-        <p class="card-price">{{item.price}}</p>
+      </div> -->
+      <div
+        class="product-filter-container"
+        *ngIf="productDetailsList?.genders?.length > 1"
+      >
+        <p>Gender</p>
+        <div
+          class="filter container column"
+          *ngFor="let item of productDetailsList?.genders"
+        >
+          <form name="filters-form">
+            <div class="item">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  [id]="'gender-' + item.genderId"
+                  [checked]="selectedGenders.includes(item.genderId)"
+                  (change)="toggleSelection('gender', item.genderId)"
+                />
+
+                <label
+                  class="form-check-label"
+                  [for]="'gender-' + item.genderId"
+                  >{{ item.genderName }}</label
+                >
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-        </div> -->
-        <div class="col-4" *ngFor="let item of productList">
-        <div class="card" >
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h6 class="card-text-brand">{{item.brand.brandName}}</h6>
-              <p>{{item.productName}}</p>
-              <p>{{item.price}} RON</p>
+      <div
+        class="product-filter-container"
+        *ngIf="productDetailsList?.skinTypes?.length > 1"
+      >
+        <p>Skin Type</p>
+        <div
+          class="filter container column"
+          *ngFor="let item of productDetailsList?.skinTypes"
+        >
+          <form name="filters-form">
+            <div class="item">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  [id]="'skin-'"
+                  +
+                  item.skinTypeId
+                  [checked]="selectedSkinTypes.includes(item.skinTypeId)"
+                  (change)="toggleSelection('skin', item.skinTypeId)"
+                />
+                <label
+                  class="form-check-label"
+                  [for]="'skin-' + item.skinTypeId"
+                  >{{ item.skinName }}</label
+                >
+              </div>
             </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="product-filter-container"
+        *ngIf="productDetailsList?.brands?.length > 1"
+      >
+        <p>Brands</p>
+        <div
+          class="filter container column"
+          *ngFor="let item of productDetailsList?.brands"
+        >
+          <form name="filters-form">
+            <div class="item">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckChecked"
+                />
+                <label class="form-check-label" for="flexSwitchCheckChecked">{{
+                  item.brandName
+                }}</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="product-filter-container"
+        *ngIf="productDetailsList?.glowEffects?.length > 1"
+      >
+        <p>Glow Effect</p>
+        <div
+          class="filter container column"
+          *ngFor="let item of productDetailsList?.glowEffects"
+        >
+          <form name="filters-form">
+            <div class="item">
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckChecked"
+                />
+                <label class="form-check-label" for="flexSwitchCheckChecked">{{
+                  item.glowEffectName
+                }}</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="product list row justify-content-between">
+      <p class="products-number">
+        {{ productsNumber }} PRODUCTS
+        {{ category?.subCategoryName | uppercase }}
+      </p>
+      <!-- check here !!! -->
+      <div
+        class="col-4"
+        *ngFor="
+          let item of productDetailsList?.products
+            | paginate : { itemsPerPage: pageSize, currentPage: page }
+        "
+      >
+        <div class="card">
+          <img class="card-img-top" />
+          <div class="card-body">
+            <h6 class="card-text-brand">{{ item.brand.brandName }}</h6>
+            <p>{{ item.productName }}</p>
+            <p>{{ item.price }} RON</p>
           </div>
         </div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
+  <ngb-pagination
+    class="pagination"
+    [collectionSize]="collectionSize"
+    [(page)]="page"
+    [pageSize]="pageSize"
+  >
+  </ngb-pagination>
 </div>

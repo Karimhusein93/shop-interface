@@ -12,6 +12,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     FooterModule,
     NgbModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,6 +12,8 @@ import { SummaryContentComponent} from '../summary-content/summary-content.compo
 import { RouterModule } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
 import { SummaryRoutingModule } from './summary-routing.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { SummaryRoutingModule } from './summary-routing.module';
     MatIconModule,
     MatButtonModule,
     RouterModule,
-    SummaryRoutingModule
+    SummaryRoutingModule,
+    NgxPaginationModule,
+    NgbPaginationModule
   ],
   exports: [
     NavbarComponent,
